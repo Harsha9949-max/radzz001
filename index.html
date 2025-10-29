@@ -428,6 +428,59 @@
         }
       }
 
+      /* --- Video Editor --- */
+      .video-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .video-filter-none { filter: none; }
+      .video-filter-grayscale { filter: grayscale(100%); }
+      .video-filter-sepia { filter: sepia(100%); }
+      .video-filter-invert { filter: invert(100%); }
+      .video-filter-brightness { filter: brightness(1.5); }
+      .video-filter-contrast { filter: contrast(200%); }
+
+      /* --- File Attachment Styles --- */
+      .attachment-bubble {
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+        background: rgba(0,0,0,0.2);
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: background-color 0.2s;
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .attachment-bubble:hover {
+          background: rgba(0,0,0,0.3);
+      }
+      .attachment-bubble img {
+          width: 56px;
+          height: 56px;
+          border-radius: 8px;
+          object-fit: cover;
+          flex-shrink: 0;
+      }
+      .attachment-icon-wrapper {
+          flex-shrink: 0;
+          width: 56px;
+          height: 56px;
+          border-radius: 8px;
+          background: rgba(var(--rgb-secondary), 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
       /* GENERAL ANIMATIONS */
       @keyframes fade-in-down { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
       @keyframes fade-in-up { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }

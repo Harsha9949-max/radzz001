@@ -12,6 +12,13 @@ export type AuthMode = 'login' | 'signup';
 // Updated ChatMode with new premium features
 export type ChatMode = 'radzz' | 'lightning' | 'deep_thinking' | 'real_time_data' | 'video_generation' | 'study_buddy';
 
+export interface Attachment {
+  name: string;
+  type: string;
+  url: string;
+  size: number;
+}
+
 export interface Message {
   id: string;
   role: 'user' | 'model';
@@ -22,7 +29,15 @@ export interface Message {
     url: string;
     // Adding a flag for placeholder media to differentiate
     isPlaceholder?: boolean;
+    edits?: {
+      filter: string;
+      overlayText?: {
+        text: string;
+        color: string;
+      };
+    };
   };
+  attachment?: Attachment;
 }
 
 export interface GroundingSource {
